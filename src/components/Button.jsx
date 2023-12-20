@@ -31,7 +31,11 @@ export function Button(props) {
         margin-bottom: ${marginBottom};
         background: var(
           --Primary,
-          ${buttonType === "primary" ? "#074ee8" : "#07a4e8"}
+          ${buttonType === "primary"
+            ? "#074ee8"
+            : buttonType === "secondary"
+            ? "#07a4e8"
+            : "initial"}
         );
       `}
     >
@@ -40,52 +44,4 @@ export function Button(props) {
   );
 }
 
-// old my version
 
-// export function Button(props) {
-//   return (
-//     if (props.type === "primary" ){
-//         <button
-//           className="primary-btn"
-//           type="primary"
-//           css={css`
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//             width: 171.19px;
-//             height: 50px;
-//             border-radius: 4px;
-//             background: var(--Primary, #074ee8);
-//             gap: 8px;
-//             flex-shrink: 0;
-//             padding: 0px 16px;
-//             margin-bottom: 10px;
-//           `}
-//         >
-//           {props.text}
-//         </button>
-
-//         }else if(props.type === "secondary"){
-
-//         <button
-//           className="secondary-btn"
-//           type="secondary"
-//           css={css`
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//             width: 171.19px;
-//             height: 50px;
-//             padding: 0px 16px;
-//             gap: 8px;
-//             flex-shrink: 0;
-//             border-radius: 4px;
-//             background: #07a4e8;
-//             margin-bottom: 20px;
-//           `}
-//         >
-//           {props.text}
-//         </button>
-//         }
-//   );
-// }
